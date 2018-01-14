@@ -14,11 +14,11 @@
                         <p>Uploaded on {{$post->created_at}} by {{$post->user->name}}</p>
                     </div>
                     <div class="col-md-4 col-sm-4">
-                        {{--  <audio controls>
-                            <source src="{{ route('pdf', 1) }}" type="audio/mp3">
+                        <audio controls>
+                            <source src="public/all_files/{{$post->cover_image}}" ype="audio/mp3">
                             <source src="public/all_files/{{$post->cover_image}}" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        </audio>  --}}
+                        </audio>
                     </div>
                 </div>
             </div>
@@ -27,8 +27,4 @@
     @else
         <p>No music found</p>
     @endif
-    <audio controls>
-        <source src="C:\Users\Marks_Admin\Desktop\Music\Replay.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
 @endsection
