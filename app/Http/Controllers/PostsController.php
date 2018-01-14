@@ -83,7 +83,7 @@ class PostsController extends Controller
         $post->cover_image = $fileNameToStore;
         $post->save();
 
-        return redirect('/music')->with('success', 'Music Uploaded');
+        return redirect('/dashboard')->with('success', 'Music Uploaded');
     }
 
     /**
@@ -180,6 +180,6 @@ class PostsController extends Controller
 
 
         $post->delete();
-        return redirect('/music')->with('success', 'Music Removed');
+        return redirect('/dashboard')->with('success', 'Music Removed');
     }
 }

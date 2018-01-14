@@ -28,5 +28,9 @@
     <script>
          CKEDITOR.replace( 'article-ckeditor' );
     </script>
+    <audio controls>
+        <source src="C:\Users\Marks_Admin\Desktop\Music\Replay.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 </body>
 </html>
