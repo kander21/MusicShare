@@ -27,8 +27,8 @@ Route::get('/about', function(){
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/partners', 'PagesController@partners');
-
 Route::resource('music', 'PostsController'); //php artisan make:controller PostsController --resource
-
 Auth::routes(); //php artisan make:auth //iespējo default autentifikācijas sistēmu
 Route::get('/dashboard', 'DashboardController@index');
+Route::post('/', 'CommentsController@store');
+Route::post('/music', 'PostsController@search');

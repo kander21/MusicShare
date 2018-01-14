@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Post;
+use App\Comment;
 use DB;
 
 class PostsController extends Controller
@@ -95,6 +96,7 @@ class PostsController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
+        //$comments = Comment::find($id);
         return view('posts.show')->with('post', $post);
     }
 
@@ -128,7 +130,7 @@ class PostsController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'body' => 'required',
-            'music' => 'image|nullable|max:1999'
+            'music' => 'nullable|mimes:mpga,mp4'
         ]);
 
         // Handle File Upload
@@ -181,5 +183,11 @@ class PostsController extends Controller
 
         $post->delete();
         return redirect('/dashboard')->with('success', 'Music Removed');
+    }
+
+    public function search(Request $request)
+    {
+        $title = $request->input('title');
+        return view('posts.index')->with('posts',Post::where('title', 'like' ,'%'.$title.'%')->paginate(5));
     }
 }

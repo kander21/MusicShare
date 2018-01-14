@@ -16,7 +16,8 @@
                             <div class="well" style="padding: 6px; margin-bottom: 7px">
                                 <div class="row">
                                     <div class="col-md-8 col-sm-8 title" style="margin-top: 6px">
-                                        <a href="/music/{{$post->id}}">{{$post->title}}</a>
+                                        {{--<a href="/music/{{$post->id}}">{{$post->title}}</a>--}}
+                                        {{$post->title}}
                                     </div>
                                     <div class="col-md-2 col-sm-2">
                                         <a href="/music/{{$post->id}}/edit" class="btn btn-default">Edit</a>

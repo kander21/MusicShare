@@ -2,6 +2,16 @@
 
 @section('content')
     <h1>Music</h1>
+    <div class="row">
+        {!! Form::open(['action' => 'PostsController@search', 'method' => 'POST']) !!}
+        <div class="form-group col-md-11 col-sm-11">
+            {{Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'Search'])}}
+        </div>
+        <div class="form-group col-md-1 col-sm-1">
+            {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
+        </div>
+        {!! Form::close() !!}
+    </div>
     @if(count($posts) > 0)
         @foreach($posts as $post)
             <div class="well" style="padding: 0px">
