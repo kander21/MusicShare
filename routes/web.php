@@ -32,3 +32,4 @@ Auth::routes(); //php artisan make:auth //iespējo default autentifikācijas sis
 Route::get('/dashboard', 'DashboardController@index');
 Route::post('/', 'CommentsController@store');
 Route::post('/music', 'PostsController@search');
+Route::post('/music', 'PostsController@store');
