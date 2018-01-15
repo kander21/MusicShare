@@ -184,10 +184,4 @@ class PostsController extends Controller
         $post->delete();
         return redirect('/dashboard')->with('success', 'Music Removed');
     }
-
-    public function search(Request $request)
-    {
-        $title = $request->input('title');
-        return view('posts.index')->with('posts',Post::where('title', 'like' ,'%'.$title.'%')->paginate(5));
-    }
 }

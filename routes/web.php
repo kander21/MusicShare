@@ -31,5 +31,5 @@ Route::resource('music', 'PostsController'); //php artisan make:controller Posts
 Auth::routes(); //php artisan make:auth //iespējo default autentifikācijas sistēmu
 Route::get('/dashboard', 'DashboardController@index');
 Route::post('/', 'CommentsController@store');
-Route::post('/music', 'PostsController@search');
-Route::post('/music', 'PostsController@store');
+Route::post('/music', 'SearchController@search');
+Route::post('/music/create', 'PostsController@store');

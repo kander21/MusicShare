@@ -3,14 +3,13 @@
 @section('content')
     <a href="/music" class="btn btn-default">Go Back</a> 
     <h2>{{$post->title}}</h2>
-    <img class="img-thumbnail" style="width:100%" src="/storage/cover_images/{{$post->cover_image}}">
-    <hr>
     <div>
-        {!!$post->body!!} <!-- !! parsing html tags -->
+        <pre>{!!$post->body!!}</pre> <!-- !! parsing html tags -->
     </div>
-    <br>
+
     <small>Uploaded on {{$post->created_at}} by {{$post->user->name}}</small>
-    <hr>
+    <br>
+    <br>
     @if(!Auth::guest())
         @if(Auth::user()->id == $post->user_id)
             <a href="/music/{{$post->id}}/edit" class="btn btn-default">Edit</a>
@@ -27,8 +26,8 @@
             @foreach($post->comments as $value)
                 <div class="well" style="padding: 0px">
                     <div class="row">
-                        <div class="col-md-2 col-sm-2" style="padding-left: 50px">
-                            <p>{{$value->user->name}}</p>
+                        <div class="col-md-2 col-sm-2" style="padding-left: 50px; margin-top:12px">
+                            <p><b>Author:</b> {{$value->user->name}}</p>
                         </div>
                         <div class="col-md-10 col-sm-10">
                            <p>{!!$value->info!!}</p>
@@ -40,37 +39,6 @@
             <p>No comments found</p>
         @endif
 
-
-
-
-
-{{--<pre>{{$post->comments[0]->user->name}}</pre>--}}                
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
         <br>
         <br>
         <h5>Add Comment</h5>

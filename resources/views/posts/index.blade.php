@@ -3,7 +3,7 @@
 @section('content')
     <h1>Music</h1>
     <div class="row">
-        {!! Form::open(['action' => 'PostsController@search', 'method' => 'POST']) !!}
+        {!! Form::open(['action' => 'SearchController@search', 'method' => 'POST']) !!}
         <div class="form-group col-md-11 col-sm-11">
             {{Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'Search'])}}
         </div>
