@@ -25,8 +25,8 @@
                     </div>
                     <div class="col-md-4 col-sm-4">
                         <audio controls>
-                            <source src="public/all_files/{{$post->cover_image}}" ype="audio/mp3">
-                            <source src="public/all_files/{{$post->cover_image}}" type="audio/mpeg">
+                            <source src="C:\wamp64\www\webeks2\storage\app\public\all_files{{$post->cover_image}}" ype="audio/mp3">
+                            <source src="/storage/all_files/{{$post->cover_image}}" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </div>
